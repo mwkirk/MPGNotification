@@ -329,9 +329,14 @@ static const CGFloat kColorAdjustmentLight = 0.35;
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
     
-    // do not actually set the background color of the base view (scrollView)
-    self.backgroundView.backgroundColor = backgroundColor;
-    
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+        UIVisualEffect *visualEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:visualEffect];
+        blurView.frame = self.bounds;
+        [self.backgroundView addSubview:blurView];
+    } else {
+        self.backgroundView.backgroundColor = [UIColor colorWithRed:45/255.0f green:44/255.0f blue:42/255.0f alpha:1.0f];
+    }
 }
 
 - (void)setTitle:(NSString *)title {
