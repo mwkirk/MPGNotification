@@ -335,7 +335,7 @@ static const CGFloat kColorAdjustmentLight = 0.35;
         blurView.frame = self.bounds;
         [self.backgroundView addSubview:blurView];
     } else {
-        self.backgroundView.backgroundColor = [UIColor colorWithRed:45/255.0f green:44/255.0f blue:42/255.0f alpha:1.0f];
+        self.backgroundView.backgroundColor = backgroundColor;
     }
 }
 
