@@ -36,7 +36,7 @@
 static const CGFloat kMaximumNotificationWidth = 512;
 
 static const CGFloat kNotificationHeight = 64;
-static const CGFloat kIconImageSize = 32.0;
+static const CGFloat kIconImageSize = 25.0;
 static const NSTimeInterval kLinearAnimationTime = 0.25;
 
 NSString * const kTitleFontName = @"HelveticaNeue-Bold";
@@ -226,7 +226,7 @@ static const CGFloat kColorAdjustmentLight = 0.35;
     
     CGFloat titleLabelPaddingY = (subtitleEmpty) ? 18 : (subtitleOneLiner) ? 13 : 3;
     
-    self.titleLabel.frame = CGRectMake(textPaddingX,
+    self.titleLabel.frame = CGRectMake(textPaddingX + 5,
                                        titleLabelPaddingY,
                                        textWidth,
                                        kTitleLabelHeight);
